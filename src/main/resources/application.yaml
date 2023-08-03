@@ -1,0 +1,27 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: hmdp
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.242.128/hmdp?serverTimezone=UTC
+    username: root
+    password: 123456
+  redis:
+    host: 192.168.242.128
+    port: 6379
+    password: 123456
+    lettuce:
+      pool:
+        max-active: 10
+        max-idle: 10
+        min-idle: 1
+        time-between-eviction-runs: 10s
+  jackson:
+    default-property-inclusion: non_null # JSON\u5904\u7406\u65F6\u5FFD\u7565\u975E\u7A7A\u5B57\u6BB5
+mybatis-plus:
+  type-aliases-package: com.hmdp.entity # \u522B\u540D\u626B\u63CF\u5305
+logging:
+  level:
+    com.hmdp: debug
